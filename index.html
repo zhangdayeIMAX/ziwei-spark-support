@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术支持 | Support - Ziwei Spark</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #7B1FA2 0%, #9C47C2 100%);
+            border-radius: 24px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            box-shadow: 0 8px 24px rgba(123, 31, 162, 0.3);
+        }
+
+        .app-name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #7B1FA2;
+            margin-bottom: 8px;
+        }
+
+        .app-tagline {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .lang-switch {
+            margin-top: 24px;
+        }
+
+        .lang-switch button {
+            padding: 10px 24px;
+            margin: 0 8px;
+            border: 2px solid #7B1FA2;
+            background: white;
+            color: #7B1FA2;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch button.active {
+            background: #7B1FA2;
+            color: white;
+        }
+
+        .lang-switch button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(123, 31, 162, 0.3);
+        }
+
+        .content {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #7B1FA2;
+            font-size: 22px;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0e6f5;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 18px;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin: 12px 0;
+            color: #555;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #f8f4fc 0%, #f0e6f5 100%);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .contact-box .email {
+            font-size: 20px;
+            font-weight: 600;
+            color: #7B1FA2;
+            text-decoration: none;
+            display: inline-block;
+            padding: 12px 32px;
+            background: white;
+            border-radius: 30px;
+            margin-top: 12px;
+            box-shadow: 0 4px 12px rgba(123, 31, 162, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .contact-box .email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 31, 162, 0.25);
+        }
+
+        .spark-info {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+
+        .spark-info h4 {
+            color: #b45309;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #f9fafb;
+            padding: 16px 20px;
+            font-weight: 600;
+            color: #374151;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #f3f4f6;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 20px;
+            color: #7B1FA2;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #7B1FA2;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .version {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .steps {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps li {
+            position: relative;
+            padding-left: 50px;
+            margin: 15px 0;
+        }
+
+        .steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: #7B1FA2;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .content {
+                padding: 24px;
+            }
+
+            .lang-switch button {
+                padding: 8px 16px;
+                margin: 4px;
+                font-size: 13px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">✦</div>
+            <div class="app-name">Ziwei Spark</div>
+            <div class="app-tagline" id="tagline">紫微斗数 AI 智能解读</div>
+            <div class="lang-switch">
+                <button class="active" onclick="switchLang('zh-Hans')">简体中文</button>
+                <button onclick="switchLang('zh-Hant')">繁體中文</button>
+                <button onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+
+        <!-- 简体中文 -->
+        <div class="content">
+            <div class="section active" id="zh-Hans">
+                <h2>📧 联系我们</h2>
+                <p>如果您在使用 Ziwei Spark 过程中遇到任何问题，或有任何建议和反馈，请随时联系我们的技术支持团队。我们承诺在 24-48 小时内回复您的邮件。</p>
+                <div class="contact-box">
+                    <p>技术支持邮箱</p>
+                    <a href="mailto:dayezhang@gmail.com" class="email">dayezhang@gmail.com</a>
+                </div>
+
+                <h2>⭐ 星耀（Spark）说明</h2>
+                <p>星耀是 Ziwei Spark 应用内的虚拟代币，用于使用 AI 解读服务。</p>
+
+                <h3>星耀用途</h3>
+                <ul>
+                    <li><strong>紫微简推</strong>：每次对话消耗 1 星耀</li>
+                    <li><strong>紫微精演</strong>：每次对话消耗 2 星耀</li>
+                </ul>
+
+                <h3>获取星耀</h3>
+                <ul>
+                    <li>新用户注册赠送初始星耀</li>
+                    <li>每日签到可获得星耀奖励</li>
+                    <li>通过应用内购买获取更多星耀</li>
+                </ul>
+
+                <div class="spark-info">
+                    <h4>⚠️ 购买问题处理</h4>
+                    <p><strong>如果购买后星耀没有到账：</strong></p>
+                    <ol class="steps">
+                        <li>请确保网络连接正常，等待 1-2 分钟后刷新应用</li>
+                        <li>检查您的 Apple ID 购买记录，确认扣款是否成功</li>
+                        <li>尝试退出应用后重新登录</li>
+                        <li>如仍未解决，请将您的购买凭证截图发送至 dayezhang@gmail.com，我们会在 24 小时内为您处理</li>
+                    </ol>
+                </div>
+
+                <h2>❓ 常见问题</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">什么是紫微斗数？</div>
+                    <div class="faq-answer">
+                        <p>紫微斗数是中国传统命理学的重要分支，起源于唐宋时期，以紫微星为主导，结合十二宫位和众多星曜，形成一套完整的命理分析体系。它通过分析个人出生时间对应的星象排布，来解读人生的各个方面，包括性格、事业、感情、健康等。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">我的出生信息安全吗？</div>
+                    <div class="faq-answer">
+                        <p>绝对安全。您的出生信息仅用于生成命盘和 AI 解读，我们采用银行级加密技术保护您的数据。我们不会将您的个人信息出售或分享给任何第三方。详情请参阅我们的<a href="privacy-policy.html">隐私政策</a>。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">AI 解读的准确性如何？</div>
+                    <div class="faq-answer">
+                        <p>Ziwei Spark 的 AI 解读基于传统紫微斗数理论，结合现代人工智能技术。解读内容仅供参考和娱乐，不应作为重大人生决策的唯一依据。命运掌握在您自己手中，我们的解读旨在提供思考的方向和参考。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">如何更换出生信息？</div>
+                    <div class="faq-answer">
+                        <p>您可以在「我的」页面中点击「出生信息」进行修改。修改后，系统会重新为您生成命盘。请注意，确保输入的出生时间准确，这将直接影响命盘的生成结果。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">支持哪些设备？</div>
+                    <div class="faq-answer">
+                        <p>Ziwei Spark 目前支持 iOS 16.0 及以上版本的 iPhone 和 iPad。我们会持续优化应用体验，确保在各种设备上都能流畅运行。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 繁體中文 -->
+            <div class="section" id="zh-Hant">
+                <h2>📧 聯絡我們</h2>
+                <p>如果您在使用 Ziwei Spark 過程中遇到任何問題，或有任何建議和反饋，請隨時聯絡我們的技術支援團隊。我們承諾在 24-48 小時內回覆您的郵件。</p>
+                <div class="contact-box">
+                    <p>技術支援信箱</p>
+                    <a href="mailto:dayezhang@gmail.com" class="email">dayezhang@gmail.com</a>
+                </div>
+
+                <h2>⭐ 星耀（Spark）說明</h2>
+                <p>星耀是 Ziwei Spark 應用程式內的虛擬代幣，用於使用 AI 解讀服務。</p>
+
+                <h3>星耀用途</h3>
+                <ul>
+                    <li><strong>紫微簡推</strong>：每次對話消耗 1 星耀</li>
+                    <li><strong>紫微精演</strong>：每次對話消耗 2 星耀</li>
+                </ul>
+
+                <h3>獲取星耀</h3>
+                <ul>
+                    <li>新用戶註冊贈送初始星耀</li>
+                    <li>每日簽到可獲得星耀獎勵</li>
+                    <li>透過應用程式內購買獲取更多星耀</li>
+                </ul>
+
+                <div class="spark-info">
+                    <h4>⚠️ 購買問題處理</h4>
+                    <p><strong>如果購買後星耀沒有到帳：</strong></p>
+                    <ol class="steps">
+                        <li>請確保網路連線正常，等待 1-2 分鐘後重新整理應用程式</li>
+                        <li>檢查您的 Apple ID 購買記錄，確認扣款是否成功</li>
+                        <li>嘗試退出應用程式後重新登入</li>
+                        <li>如仍未解決，請將您的購買憑證截圖發送至 dayezhang@gmail.com，我們會在 24 小時內為您處理</li>
+                    </ol>
+                </div>
+
+                <h2>❓ 常見問題</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">什麼是紫微斗數？</div>
+                    <div class="faq-answer">
+                        <p>紫微斗數是中國傳統命理學的重要分支，起源於唐宋時期，以紫微星為主導，結合十二宮位和眾多星曜，形成一套完整的命理分析體系。它透過分析個人出生時間對應的星象排布，來解讀人生的各個方面，包括性格、事業、感情、健康等。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">我的出生資訊安全嗎？</div>
+                    <div class="faq-answer">
+                        <p>絕對安全。您的出生資訊僅用於產生命盤和 AI 解讀，我們採用銀行級加密技術保護您的資料。我們不會將您的個人資訊出售或分享給任何第三方。詳情請參閱我們的<a href="privacy-policy.html">隱私政策</a>。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">AI 解讀的準確性如何？</div>
+                    <div class="faq-answer">
+                        <p>Ziwei Spark 的 AI 解讀基於傳統紫微斗數理論，結合現代人工智慧技術。解讀內容僅供參考和娛樂，不應作為重大人生決策的唯一依據。命運掌握在您自己手中，我們的解讀旨在提供思考的方向和參考。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">如何更換出生資訊？</div>
+                    <div class="faq-answer">
+                        <p>您可以在「我的」頁面中點選「出生資訊」進行修改。修改後，系統會重新為您產生命盤。請注意，確保輸入的出生時間準確，這將直接影響命盤的產生結果。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">支援哪些裝置？</div>
+                    <div class="faq-answer">
+                        <p>Ziwei Spark 目前支援 iOS 16.0 及以上版本的 iPhone 和 iPad。我們會持續優化應用程式體驗，確保在各種裝置上都能流暢執行。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- English -->
+            <div class="section" id="en">
+                <h2>📧 Contact Us</h2>
+                <p>If you encounter any issues while using Ziwei Spark, or have any suggestions and feedback, please feel free to contact our technical support team. We promise to respond to your email within 24-48 hours.</p>
+                <div class="contact-box">
+                    <p>Technical Support Email</p>
+                    <a href="mailto:dayezhang@gmail.com" class="email">dayezhang@gmail.com</a>
+                </div>
+
+                <h2>⭐ Spark Token Guide</h2>
+                <p>Spark is the virtual token within the Ziwei Spark app, used to access AI reading services.</p>
+
+                <h3>Spark Usage</h3>
+                <ul>
+                    <li><strong>Ziwei Quick Reading</strong>: 1 Spark per conversation</li>
+                    <li><strong>Ziwei Premium Reading</strong>: 2 Sparks per conversation</li>
+                </ul>
+
+                <h3>Obtaining Spark</h3>
+                <ul>
+                    <li>New users receive free Spark upon registration</li>
+                    <li>Daily check-in rewards Spark tokens</li>
+                    <li>Purchase additional Spark through in-app purchases</li>
+                </ul>
+
+                <div class="spark-info">
+                    <h4>⚠️ Purchase Issue Resolution</h4>
+                    <p><strong>If Spark tokens are not credited after purchase:</strong></p>
+                    <ol class="steps">
+                        <li>Ensure your network connection is stable and wait 1-2 minutes before refreshing the app</li>
+                        <li>Check your Apple ID purchase history to confirm if the payment was successful</li>
+                        <li>Try logging out and logging back into the app</li>
+                        <li>If the issue persists, please send a screenshot of your purchase receipt to dayezhang@gmail.com, and we will resolve it within 24 hours</li>
+                    </ol>
+                </div>
+
+                <h2>❓ Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">What is Ziwei Doushu (Purple Star Astrology)?</div>
+                    <div class="faq-answer">
+                        <p>Ziwei Doushu, also known as Purple Star Astrology, is an important branch of traditional Chinese fortune-telling that originated during the Tang and Song dynasties. It uses the Purple Star as the main reference, combined with twelve palace positions and numerous stars, to form a complete system of life analysis. By analyzing the star arrangement corresponding to one's birth time, it interprets various aspects of life, including personality, career, relationships, and health.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Is my birth information secure?</div>
+                    <div class="faq-answer">
+                        <p>Absolutely secure. Your birth information is only used for generating charts and AI readings. We use bank-level encryption technology to protect your data. We will not sell or share your personal information with any third party. For details, please refer to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">How accurate are the AI readings?</div>
+                    <div class="faq-answer">
+                        <p>Ziwei Spark's AI readings are based on traditional Ziwei Doushu theory combined with modern artificial intelligence technology. The readings are for reference and entertainment purposes only and should not be used as the sole basis for major life decisions. Your destiny is in your own hands; our readings are meant to provide direction and reference for your thoughts.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">How do I change my birth information?</div>
+                    <div class="faq-answer">
+                        <p>You can modify your birth information by tapping "Birth Information" in the "Profile" page. After modification, the system will regenerate your chart. Please ensure the birth time entered is accurate, as this directly affects the chart generation results.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Which devices are supported?</div>
+                    <div class="faq-answer">
+                        <p>Ziwei Spark currently supports iPhone and iPad running iOS 16.0 or later. We continuously optimize the app experience to ensure smooth operation on all devices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="privacy-policy.html" id="link-privacy">隐私政策</a>
+                <a href="terms.html" id="link-terms">用户协议</a>
+            </div>
+            <p class="version">Ziwei Spark v1.0.0</p>
+            <p>© 2025 Ziwei Spark. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        const taglines = {
+            'zh-Hans': '紫微斗数 AI 智能解读',
+            'zh-Hant': '紫微斗數 AI 智慧解讀',
+            'en': 'AI-Powered Purple Star Astrology'
+        };
+
+        const linkTexts = {
+            'zh-Hans': { privacy: '隐私政策', terms: '用户协议' },
+            'zh-Hant': { privacy: '隱私政策', terms: '用戶協議' },
+            'en': { privacy: 'Privacy Policy', terms: 'Terms of Service' }
+        };
+
+        function switchLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-switch button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(lang).classList.add('active');
+
+            // Update tagline
+            document.getElementById('tagline').textContent = taglines[lang];
+
+            // Update footer links
+            document.getElementById('link-privacy').textContent = linkTexts[lang].privacy;
+            document.getElementById('link-terms').textContent = linkTexts[lang].terms;
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

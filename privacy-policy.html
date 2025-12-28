@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 | Privacy Policy - 紫薇 AI | Ziwei Spark</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #7B1FA2 0%, #9C47C2 100%);
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+        }
+
+        h1 {
+            color: #7B1FA2;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .lang-switch {
+            margin-top: 20px;
+        }
+
+        .lang-switch button {
+            padding: 10px 24px;
+            margin: 0 8px;
+            border: 2px solid #7B1FA2;
+            background: white;
+            color: #7B1FA2;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch button.active {
+            background: #7B1FA2;
+            color: white;
+        }
+
+        .lang-switch button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(123, 31, 162, 0.3);
+        }
+
+        .content {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .policy-section {
+            display: none;
+        }
+
+        .policy-section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #7B1FA2;
+            font-size: 20px;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0e6f5;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background: #f0e6f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #7B1FA2;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #7B1FA2 0%, #9C47C2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .update-date {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">✦</div>
+            <h1>紫薇 AI | Ziwei Spark</h1>
+            <p style="color: #666;">智能紫微斗数命理分析</p>
+            <div class="lang-switch">
+                <button id="btn-zh" class="active" onclick="switchLang('zh')">中文</button>
+                <button id="btn-en" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- 中文版本 -->
+            <div id="policy-zh" class="policy-section active">
+                <p class="update-date">最后更新日期：2024年12月26日</p>
+
+                <h2>一、引言</h2>
+                <p>欢迎使用紫薇 AI（Ziwei Spark）应用程序。我们非常重视您的隐私保护。本隐私政策旨在向您说明我们如何收集、使用、存储和保护您的个人信息。请您在使用我们的服务前仔细阅读本政策。</p>
+
+                <h2>二、信息收集</h2>
+                <p>为了提供紫微斗数命理分析服务，我们可能收集以下信息：</p>
+                <ul>
+                    <li><strong>出生信息：</strong>包括您的出生日期、出生时间（时辰）、性别等，用于生成紫微斗数命盘</li>
+                    <li><strong>账户信息：</strong>通过Apple登录时获取的用户标识符</li>
+                    <li><strong>使用数据：</strong>您与AI助手的对话内容、命盘查询记录等</li>
+                    <li><strong>设备信息：</strong>设备型号、操作系统版本、唯一设备标识符等</li>
+                    <li><strong>购买信息：</strong>应用内购买的交易记录</li>
+                </ul>
+
+                <h2>三、信息使用</h2>
+                <p>我们收集的信息将用于以下目的：</p>
+                <ul>
+                    <li>生成和分析您的紫微斗数命盘</li>
+                    <li>提供个性化的AI命理解读服务</li>
+                    <li>管理您的账户和提供客户支持</li>
+                    <li>处理应用内购买交易</li>
+                    <li>改进我们的产品和服务</li>
+                    <li>向您发送服务相关的通知</li>
+                </ul>
+
+                <h2>四、信息存储与保护</h2>
+                <p>我们采取以下措施保护您的信息安全：</p>
+                <ul>
+                    <li>所有数据传输均采用SSL/TLS加密</li>
+                    <li>敏感信息在服务器端加密存储</li>
+                    <li>严格的访问控制机制</li>
+                    <li>定期安全审计和漏洞检测</li>
+                </ul>
+                <p>您的数据存储在安全的云服务器上，我们会根据法律要求和业务需要保留您的信息。</p>
+
+                <h2>五、信息共享</h2>
+                <p>我们承诺不会出售您的个人信息。仅在以下情况下可能共享您的信息：</p>
+                <ul>
+                    <li>获得您的明确同意</li>
+                    <li>法律法规要求或政府部门依法要求</li>
+                    <li>与我们的服务提供商共享（如云服务、支付处理），且他们受到严格的保密义务约束</li>
+                </ul>
+
+                <h2>六、第三方服务</h2>
+                <p>我们的应用可能使用以下第三方服务：</p>
+                <ul>
+                    <li><strong>Apple 登录：</strong>用于账户认证</li>
+                    <li><strong>Apple 应用内购买：</strong>用于处理付款</li>
+                    <li><strong>AI 服务：</strong>用于提供智能命理解读</li>
+                </ul>
+                <p>这些第三方服务有各自的隐私政策，建议您查阅了解。</p>
+
+                <h2>七、您的权利</h2>
+                <p>您对自己的个人信息享有以下权利：</p>
+                <ul>
+                    <li><strong>访问权：</strong>查看我们收集的您的个人信息</li>
+                    <li><strong>更正权：</strong>更正不准确的个人信息</li>
+                    <li><strong>删除权：</strong>要求删除您的个人信息和账户</li>
+                    <li><strong>撤回同意权：</strong>随时撤回对信息处理的同意</li>
+                </ul>
+                <p>如需行使上述权利，请通过下方联系方式与我们联系。</p>
+
+                <h2>八、儿童隐私</h2>
+                <p>我们的服务不面向13岁以下的儿童。我们不会故意收集13岁以下儿童的个人信息。如果您发现我们无意中收集了儿童的信息，请立即联系我们，我们将及时删除相关信息。</p>
+
+                <h2>九、隐私政策更新</h2>
+                <p>我们可能会不时更新本隐私政策。更新后的政策将在应用内或网站上公布，并注明更新日期。重大变更时，我们会通过应用内通知或电子邮件告知您。</p>
+
+                <div class="contact">
+                    <h3>十、联系我们</h3>
+                    <p style="margin-top: 15px;">如果您对本隐私政策有任何疑问、意见或建议，请通过以下方式联系我们：</p>
+                    <p style="margin-top: 10px; font-size: 18px;">📧 <a href="mailto:dayezhang@gmail.com">dayezhang@gmail.com</a></p>
+                </div>
+            </div>
+
+            <!-- English Version -->
+            <div id="policy-en" class="policy-section">
+                <p class="update-date">Last Updated: December 26, 2024</p>
+
+                <h2>1. Introduction</h2>
+                <p>Welcome to Ziwei Spark (紫薇 AI) application. We highly value your privacy. This Privacy Policy explains how we collect, use, store, and protect your personal information. Please read this policy carefully before using our services.</p>
+
+                <h2>2. Information Collection</h2>
+                <p>To provide Zi Wei Dou Shu (Purple Star Astrology) analysis services, we may collect the following information:</p>
+                <ul>
+                    <li><strong>Birth Information:</strong> Including your date of birth, time of birth, gender, etc., used to generate your astrological chart</li>
+                    <li><strong>Account Information:</strong> User identifier obtained through Sign in with Apple</li>
+                    <li><strong>Usage Data:</strong> Your conversations with the AI assistant, chart query history, etc.</li>
+                    <li><strong>Device Information:</strong> Device model, operating system version, unique device identifier, etc.</li>
+                    <li><strong>Purchase Information:</strong> In-app purchase transaction records</li>
+                </ul>
+
+                <h2>3. Use of Information</h2>
+                <p>The information we collect will be used for the following purposes:</p>
+                <ul>
+                    <li>Generate and analyze your Zi Wei Dou Shu chart</li>
+                    <li>Provide personalized AI-powered astrological readings</li>
+                    <li>Manage your account and provide customer support</li>
+                    <li>Process in-app purchase transactions</li>
+                    <li>Improve our products and services</li>
+                    <li>Send you service-related notifications</li>
+                </ul>
+
+                <h2>4. Information Storage and Protection</h2>
+                <p>We take the following measures to protect your information:</p>
+                <ul>
+                    <li>All data transmission is encrypted using SSL/TLS</li>
+                    <li>Sensitive information is encrypted at rest on our servers</li>
+                    <li>Strict access control mechanisms</li>
+                    <li>Regular security audits and vulnerability assessments</li>
+                </ul>
+                <p>Your data is stored on secure cloud servers. We retain your information in accordance with legal requirements and business needs.</p>
+
+                <h2>5. Information Sharing</h2>
+                <p>We commit not to sell your personal information. We may only share your information in the following circumstances:</p>
+                <ul>
+                    <li>With your explicit consent</li>
+                    <li>As required by law or government authorities</li>
+                    <li>With our service providers (such as cloud services, payment processors) who are bound by strict confidentiality obligations</li>
+                </ul>
+
+                <h2>6. Third-Party Services</h2>
+                <p>Our application may use the following third-party services:</p>
+                <ul>
+                    <li><strong>Sign in with Apple:</strong> For account authentication</li>
+                    <li><strong>Apple In-App Purchase:</strong> For payment processing</li>
+                    <li><strong>AI Services:</strong> For providing intelligent astrological readings</li>
+                </ul>
+                <p>These third-party services have their own privacy policies, which we recommend you review.</p>
+
+                <h2>7. Your Rights</h2>
+                <p>You have the following rights regarding your personal information:</p>
+                <ul>
+                    <li><strong>Right to Access:</strong> View the personal information we have collected about you</li>
+                    <li><strong>Right to Rectification:</strong> Correct inaccurate personal information</li>
+                    <li><strong>Right to Erasure:</strong> Request deletion of your personal information and account</li>
+                    <li><strong>Right to Withdraw Consent:</strong> Withdraw your consent to information processing at any time</li>
+                </ul>
+                <p>To exercise these rights, please contact us using the information provided below.</p>
+
+                <h2>8. Children's Privacy</h2>
+                <p>Our services are not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you become aware that we have inadvertently collected information from a child, please contact us immediately, and we will promptly delete such information.</p>
+
+                <h2>9. Privacy Policy Updates</h2>
+                <p>We may update this Privacy Policy from time to time. The updated policy will be posted in the app or on our website with the revision date. For significant changes, we will notify you through in-app notifications or email.</p>
+
+                <div class="contact">
+                    <h3>10. Contact Us</h3>
+                    <p style="margin-top: 15px;">If you have any questions, comments, or suggestions about this Privacy Policy, please contact us at:</p>
+                    <p style="margin-top: 10px; font-size: 18px;">📧 <a href="mailto:dayezhang@gmail.com">dayezhang@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 紫薇 AI | Ziwei Spark. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.getElementById('policy-zh').classList.remove('active');
+            document.getElementById('policy-en').classList.remove('active');
+            document.getElementById('btn-zh').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+
+            document.getElementById('policy-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        }
+
+        // Detect browser language
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang && !browserLang.startsWith('zh')) {
+            switchLang('en');
+        }
+    </script>
+</body>
+</html>
